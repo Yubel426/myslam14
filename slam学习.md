@@ -4,6 +4,15 @@
 
 ### cmkae学习
 
+#####安装cmake
+
+```shell
+#安装cmake 找不到cmake
+export PATH=/home/mao/cmake/bin:$PATH
+```
+
+
+
 ```cmake
 cmake_minimum_required(VERSION 3.22)
 #创建
@@ -75,7 +84,7 @@ main.cpp
 
 ### 3.2Eigen
 
-换源
+#####换源
 
 ```shell
 #备份
@@ -136,18 +145,17 @@ ZYX旋转。[r,p,y]，roll ,pitch,yaw。
 
 #### 显示运动轨迹
 
-#####安装pangolin
-
-安装依赖
+#####安装依赖
 
 ```shell
 sudo apt-get install libglew-dev
 ```
 
-安装pangolin
+#####安装pangolin
 
 ```shell
 git clone https://github.com/stevenlovegrove/Pangolin.git
+cd Pangolin
 mkdir build
 cd build
 cmake ..
