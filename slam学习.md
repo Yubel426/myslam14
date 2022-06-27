@@ -29,6 +29,7 @@ target_link_libraries(hello_slam hello_shared)
 .h文件中 
 
 ```c++
+// .h
 //#include<> 不需要
 void print();//主要；
 ```
@@ -36,6 +37,7 @@ void print();//主要；
  .cpp文件中
 
 ```c++
+// .cpp
 #include<iostream>
 using namespace std;
 ```
@@ -73,7 +75,46 @@ main.cpp
 
 ### 3.2Eigen
 
+换源
+
+```shell
+#备份
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+
+sudo vim /etc/apt/sources.list
+#全部删除命令 ggdG
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse
+deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse
+
+# 更新镜像源
+sudo apt-get update
+# 更新软件
+sudo apt-get upgrade  
+```
+
+
+
+安装Eigen
+
+```shell
+sudo apt-get install libeigen3-dev
+```
+
 使用库先在cmakelist中include directory
+
+```cmake
+# 添加Eigen头文件
+include_directories( "/usr/include/eigen3" )
+```
+
+
 
 ### 3.3旋转向量和欧拉角
 
@@ -90,6 +131,32 @@ ZYX旋转。[r,p,y]，roll ,pitch,yaw。
 万向锁问题。用三个代数表示旋转都具有奇异性。
 
 ### 3.4四元数
+
+### 实践
+
+#### 显示运动轨迹
+
+#####安装pangolin
+
+安装依赖
+
+```shell
+sudo apt-get install libglew-dev
+```
+
+安装pangolin
+
+```shell
+git clone https://github.com/stevenlovegrove/Pangolin.git
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+ldconfig
+```
+
+
 
 
 

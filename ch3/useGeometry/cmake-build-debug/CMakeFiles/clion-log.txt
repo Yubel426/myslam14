@@ -1,4 +1,4 @@
-/opt/clion-2022.1.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/opt/clion-2022.1.2/bin/ninja/linux/ninja -G Ninja -S /home/mao/slam/myslam14/ch3/useGeometry -B /home/mao/slam/myslam14/ch3/useGeometry/cmake-build-debug
+C:\Windows\system32\wsl.exe --distribution Ubuntu-22.04 --exec /usr/bin/zsh -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /home/mao/myslam14/ch3/useGeometry/cmake-build-debug && /home/mao/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /home/mao/myslam14/ch3/useGeometry -B /home/mao/myslam14/ch3/useGeometry/cmake-build-debug"
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/mao/slam/myslam14/ch3/useGeometry/cmake-build-debug
+-- Build files have been written to: /home/mao/myslam14/ch3/useGeometry/cmake-build-debug
