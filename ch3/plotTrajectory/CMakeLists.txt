@@ -1,14 +1,7 @@
-cmake_minimum_required( VERSION 2.8 )
-project( visualizeGeometry )
+include_directories("/usr/include/eigen3")
 
-set(CMAKE_CXX_STANDARD 14)
 
-# 添加Eigen头文件
-include_directories( "/usr/include/eigen3" )
-
-# 添加Pangolin依赖
-find_package( Pangolin )
-include_directories( ${Pangolin_INCLUDE_DIRS} )
-
-add_executable( visualizeGeometry main.cpp )
-target_link_libraries( visualizeGeometry ${Pangolin_LIBRARIES} )
+find_package(Pangolin REQUIRED)
+include_directories(${Pangolin_INCLUDE_DIRS})
+add_executable(plotTrajectory main.cpp )
+target_link_libraries(plotTrajectory ${Pangolin_LIBRARIES})

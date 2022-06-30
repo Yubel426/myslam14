@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/mao/cmake/bin/cmake
+CMAKE_COMMAND = /opt/clion-2022.1.3/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/mao/cmake/bin/cmake -E rm -f
+RM = /opt/clion-2022.1.3/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mao/myslam14/ch3/plotTrajectory
+CMAKE_SOURCE_DIR = /home/mao/slam/myslam14/ch3/plotTrajectory
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug
+CMAKE_BINARY_DIR = /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/visualizeGeometry.dir/depend.make
@@ -72,16 +72,16 @@ include CMakeFiles/visualizeGeometry.dir/flags.make
 CMakeFiles/visualizeGeometry.dir/main.cpp.o: CMakeFiles/visualizeGeometry.dir/flags.make
 CMakeFiles/visualizeGeometry.dir/main.cpp.o: ../main.cpp
 CMakeFiles/visualizeGeometry.dir/main.cpp.o: CMakeFiles/visualizeGeometry.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/visualizeGeometry.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/visualizeGeometry.dir/main.cpp.o -MF CMakeFiles/visualizeGeometry.dir/main.cpp.o.d -o CMakeFiles/visualizeGeometry.dir/main.cpp.o -c /home/mao/myslam14/ch3/plotTrajectory/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/visualizeGeometry.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/visualizeGeometry.dir/main.cpp.o -MF CMakeFiles/visualizeGeometry.dir/main.cpp.o.d -o CMakeFiles/visualizeGeometry.dir/main.cpp.o -c /home/mao/slam/myslam14/ch3/plotTrajectory/main.cpp
 
 CMakeFiles/visualizeGeometry.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/visualizeGeometry.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mao/myslam14/ch3/plotTrajectory/main.cpp > CMakeFiles/visualizeGeometry.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mao/slam/myslam14/ch3/plotTrajectory/main.cpp > CMakeFiles/visualizeGeometry.dir/main.cpp.i
 
 CMakeFiles/visualizeGeometry.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/visualizeGeometry.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mao/myslam14/ch3/plotTrajectory/main.cpp -o CMakeFiles/visualizeGeometry.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mao/slam/myslam14/ch3/plotTrajectory/main.cpp -o CMakeFiles/visualizeGeometry.dir/main.cpp.s
 
 # Object files for target visualizeGeometry
 visualizeGeometry_OBJECTS = \
@@ -92,27 +92,8 @@ visualizeGeometry_EXTERNAL_OBJECTS =
 
 visualizeGeometry: CMakeFiles/visualizeGeometry.dir/main.cpp.o
 visualizeGeometry: CMakeFiles/visualizeGeometry.dir/build.make
-visualizeGeometry: /usr/local/lib/libpango_glgeometry.so
-visualizeGeometry: /usr/local/lib/libpango_plot.so
-visualizeGeometry: /usr/local/lib/libpango_python.so
-visualizeGeometry: /usr/local/lib/libpango_scene.so
-visualizeGeometry: /usr/local/lib/libpango_tools.so
-visualizeGeometry: /usr/local/lib/libpango_video.so
-visualizeGeometry: /usr/local/lib/libpango_geometry.so
-visualizeGeometry: /usr/local/lib/libtinyobj.so
-visualizeGeometry: /usr/local/lib/libpango_display.so
-visualizeGeometry: /usr/local/lib/libpango_vars.so
-visualizeGeometry: /usr/local/lib/libpango_windowing.so
-visualizeGeometry: /usr/local/lib/libpango_opengl.so
-visualizeGeometry: /usr/lib/x86_64-linux-gnu/libGLEW.so
-visualizeGeometry: /usr/lib/x86_64-linux-gnu/libOpenGL.so
-visualizeGeometry: /usr/lib/x86_64-linux-gnu/libGLX.so
-visualizeGeometry: /usr/lib/x86_64-linux-gnu/libGLU.so
-visualizeGeometry: /usr/local/lib/libpango_image.so
-visualizeGeometry: /usr/local/lib/libpango_packetstream.so
-visualizeGeometry: /usr/local/lib/libpango_core.so
 visualizeGeometry: CMakeFiles/visualizeGeometry.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable visualizeGeometry"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable visualizeGeometry"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/visualizeGeometry.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -124,6 +105,6 @@ CMakeFiles/visualizeGeometry.dir/clean:
 .PHONY : CMakeFiles/visualizeGeometry.dir/clean
 
 CMakeFiles/visualizeGeometry.dir/depend:
-	cd /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mao/myslam14/ch3/plotTrajectory /home/mao/myslam14/ch3/plotTrajectory /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles/visualizeGeometry.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mao/slam/myslam14/ch3/plotTrajectory /home/mao/slam/myslam14/ch3/plotTrajectory /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles/visualizeGeometry.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/visualizeGeometry.dir/depend
 

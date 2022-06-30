@@ -1,10 +1,10 @@
-#slam14讲
+# slam14讲
 
 ## ch2 
 
 ### cmkae学习
 
-#####安装cmake
+##### 安装cmake
 
 ```shell
 #安装cmake 找不到cmake
@@ -68,7 +68,7 @@ main.cpp
 * 内积
 * 外积 反对称符号
 
-####3.1.2欧氏变换
+#### 3.1.2欧氏变换
 
 * 旋转矩阵
 
@@ -84,7 +84,7 @@ main.cpp
 
 ### 3.2Eigen
 
-#####换源
+##### 换源
 
 ```shell
 #备份
@@ -123,7 +123,11 @@ sudo apt-get install libeigen3-dev
 include_directories( "/usr/include/eigen3" )
 ```
 
-
+```c++
+Matrix<float , 2, 3>matrix_23;//定义一个2*3矩阵，数据类型为float
+Matrix3d matrix_33;//定义一个3*3矩阵 数据类型为double
+Vector3d v_3d;//定义一个3维向量
+```
 
 ### 3.3旋转向量和欧拉角
 
@@ -133,25 +137,46 @@ include_directories( "/usr/include/eigen3" )
 
 旋转矩阵R和旋转向量n关系。
 
+```c++
+AngleAxisd rotation_vector(M_PI,Vector_3d(1,1,1));//定义一个旋转向量
+Matrix3d rotation_matrix = rotation_vector.toRotationMatrix();//转换为旋转矩阵
+```
+
 #### 3.3.2欧拉角
 
 ZYX旋转。[r,p,y]，roll ,pitch,yaw。
 
 万向锁问题。用三个代数表示旋转都具有奇异性。
 
+```c++
+Vector3d euler_angle = rotation_matrix.eulerAngles(2,1,0);//按照zyx顺序转换为欧拉角
+
+Isometry3d T;//定义一个欧式变换矩阵
+T.rotate(rotation_vector);
+T.pretranslate(Vector3d(1,2,3));;//定义其旋转向量和平移向量
+```
+
+
+
 ### 3.4四元数
+
+```c++
+Quaterniond q = Quaterniond(rotation_vector);//定义一个四元数并用旋转向量转换
+```
+
+
 
 ### 实践
 
 #### 显示运动轨迹
 
-#####安装依赖
+##### 安装依赖
 
 ```shell
 sudo apt-get install libglew-dev
 ```
 
-#####安装pangolin
+##### 安装pangolin
 
 ```shell
 git clone https://github.com/stevenlovegrove/Pangolin.git
@@ -163,6 +188,76 @@ make
 sudo make install
 ldconfig
 ```
+
+`trajectory_file`依次储存了`time`,`Vector(tx,ty,tz)`,`Q(qx,qy,qz,qw)`。
+
+使用一个`Vector`储存它们。
+
+```c++
+vector<Isometry3d, Eigen::aligned_allocator<Isometry3d>> poses;
+```
+
+使用函数`DrawTrajectory`绘制图像
+
+```c++
+void DrawTrajectory(vector<Isometry3d, Eigen::aligned_allocator<Isometry3d>> poses)
+{
+    pangolin::CreateWindowAndBind("Trajectory Viewer",1024,7768);
+    //启用或禁用OpenGL功能[https://docs.microsoft.com/en-us/windows/win32/opengl/glenable],[https://docs.microsoft.com/zh-cn/windows/win32/opengl/glblendfunc]
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+	//Define Projection and initial ModelView matrix
+    pangolin::OpenGlRenderState s_cam(
+            pangolin::ProjectionMatrix(1024, 768, 500, 500, 512, 389, 0.1, 1000),
+            pangolin::ModelViewLookAt(0, -0.1, -1.8, 0, 0, 0, 0.0, -1.0, 0.0)
+    );
+    
+    pangolin::View &d_cam = pangolin::CreateDisplay()
+            .SetBounds(0.0, 1.0, 0.0, 1.0, -1024.0f / 768.0f)
+            .SetHandler(new pangolin::Handler3D(s_cam));
+
+    while (pangolin::ShouldQuit() == false) {
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        d_cam.Activate(s_cam);
+        glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+        glLineWidth(2);
+        for (size_t i = 0; i < poses.size(); i++) {
+            // 画每个位姿的三个坐标轴
+            Vector3d Ow = poses[i].translation();
+            Vector3d Xw = poses[i] * (0.1 * Vector3d(1, 0, 0));
+            Vector3d Yw = poses[i] * (0.1 * Vector3d(0, 1, 0));
+            Vector3d Zw = poses[i] * (0.1 * Vector3d(0, 0, 1));
+            glBegin(GL_LINES);
+            glColor3f(1.0, 0.0, 0.0);
+            glVertex3d(Ow[0], Ow[1], Ow[2]);
+            glVertex3d(Xw[0], Xw[1], Xw[2]);
+            glColor3f(0.0, 1.0, 0.0);
+            glVertex3d(Ow[0], Ow[1], Ow[2]);
+            glVertex3d(Yw[0], Yw[1], Yw[2]);
+            glColor3f(0.0, 0.0, 1.0);
+            glVertex3d(Ow[0], Ow[1], Ow[2]);
+            glVertex3d(Zw[0], Zw[1], Zw[2]);
+            glEnd();
+        }
+        // 画出连线
+        for (size_t i = 0; i < poses.size(); i++) {
+            glColor3f(0.0, 0.0, 0.0);
+            //直线
+            glBegin(GL_LINES);
+            auto p1 = poses[i], p2 = poses[i + 1];
+            //两点一线
+            glVertex3d(p1.translation()[0], p1.translation()[1], p1.translation()[2]);
+            glVertex3d(p2.translation()[0], p2.translation()[1], p2.translation()[2]);
+            glEnd();
+        }
+        pangolin::FinishFrame();
+        usleep(5000);   // sleep 5 ms
+    }
+}
+```
+
+
 
 
 

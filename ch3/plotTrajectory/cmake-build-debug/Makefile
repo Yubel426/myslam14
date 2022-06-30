@@ -48,27 +48,27 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/mao/cmake/bin/cmake
+CMAKE_COMMAND = /opt/clion-2022.1.3/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/mao/cmake/bin/cmake -E rm -f
+RM = /opt/clion-2022.1.3/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mao/myslam14/ch3/plotTrajectory
+CMAKE_SOURCE_DIR = /home/mao/slam/myslam14/ch3/plotTrajectory
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug
+CMAKE_BINARY_DIR = /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/home/mao/cmake/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/opt/clion-2022.1.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/mao/cmake/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/clion-2022.1.3/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,41 +117,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named visualizeGeometry
+# Target rules for targets named plotTrajectory
 
 # Build rule for target.
-visualizeGeometry: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 visualizeGeometry
-.PHONY : visualizeGeometry
+plotTrajectory: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 plotTrajectory
+.PHONY : plotTrajectory
 
 # fast build rule for target.
-visualizeGeometry/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualizeGeometry.dir/build.make CMakeFiles/visualizeGeometry.dir/build
-.PHONY : visualizeGeometry/fast
-
-main.o: main.cpp.o
-.PHONY : main.o
+plotTrajectory/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/build
+.PHONY : plotTrajectory/fast
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualizeGeometry.dir/build.make CMakeFiles/visualizeGeometry.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-.PHONY : main.i
+main.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/main.o
+.PHONY : main.o
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualizeGeometry.dir/build.make CMakeFiles/visualizeGeometry.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
+main.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/main.i
+.PHONY : main.i
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visualizeGeometry.dir/build.make CMakeFiles/visualizeGeometry.dir/main.cpp.s
-.PHONY : main.cpp.s
+main.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/main.s
+.PHONY : main.s
 
 # Help Target
 help:
@@ -161,7 +152,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... visualizeGeometry"
+	@echo "... plotTrajectory"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

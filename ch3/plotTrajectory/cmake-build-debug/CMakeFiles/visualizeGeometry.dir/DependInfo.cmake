@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/mao/myslam14/ch3/plotTrajectory/main.cpp" "CMakeFiles/visualizeGeometry.dir/main.cpp.o" "gcc" "CMakeFiles/visualizeGeometry.dir/main.cpp.o.d"
+  "/home/mao/slam/myslam14/ch3/plotTrajectory/main.cpp" "CMakeFiles/visualizeGeometry.dir/main.cpp.o" "gcc" "CMakeFiles/visualizeGeometry.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.

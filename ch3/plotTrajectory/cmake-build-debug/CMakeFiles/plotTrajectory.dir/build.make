@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/mao/cmake/bin/cmake
+CMAKE_COMMAND = /opt/clion-2022.1.3/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/mao/cmake/bin/cmake -E rm -f
+RM = /opt/clion-2022.1.3/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mao/myslam14/ch3/plotTrajectory
+CMAKE_SOURCE_DIR = /home/mao/slam/myslam14/ch3/plotTrajectory
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug
+CMAKE_BINARY_DIR = /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/plotTrajectory.dir/depend.make
@@ -69,31 +69,50 @@ include CMakeFiles/plotTrajectory.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/plotTrajectory.dir/flags.make
 
-CMakeFiles/plotTrajectory.dir/main.cpp.o: CMakeFiles/plotTrajectory.dir/flags.make
-CMakeFiles/plotTrajectory.dir/main.cpp.o: ../main.cpp
-CMakeFiles/plotTrajectory.dir/main.cpp.o: CMakeFiles/plotTrajectory.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/plotTrajectory.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/plotTrajectory.dir/main.cpp.o -MF CMakeFiles/plotTrajectory.dir/main.cpp.o.d -o CMakeFiles/plotTrajectory.dir/main.cpp.o -c /home/mao/myslam14/ch3/plotTrajectory/main.cpp
+CMakeFiles/plotTrajectory.dir/main.o: CMakeFiles/plotTrajectory.dir/flags.make
+CMakeFiles/plotTrajectory.dir/main.o: ../main.cpp
+CMakeFiles/plotTrajectory.dir/main.o: CMakeFiles/plotTrajectory.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/plotTrajectory.dir/main.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/plotTrajectory.dir/main.o -MF CMakeFiles/plotTrajectory.dir/main.o.d -o CMakeFiles/plotTrajectory.dir/main.o -c /home/mao/slam/myslam14/ch3/plotTrajectory/main.cpp
 
-CMakeFiles/plotTrajectory.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/plotTrajectory.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mao/myslam14/ch3/plotTrajectory/main.cpp > CMakeFiles/plotTrajectory.dir/main.cpp.i
+CMakeFiles/plotTrajectory.dir/main.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/plotTrajectory.dir/main.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mao/slam/myslam14/ch3/plotTrajectory/main.cpp > CMakeFiles/plotTrajectory.dir/main.i
 
-CMakeFiles/plotTrajectory.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/plotTrajectory.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mao/myslam14/ch3/plotTrajectory/main.cpp -o CMakeFiles/plotTrajectory.dir/main.cpp.s
+CMakeFiles/plotTrajectory.dir/main.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/plotTrajectory.dir/main.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mao/slam/myslam14/ch3/plotTrajectory/main.cpp -o CMakeFiles/plotTrajectory.dir/main.s
 
 # Object files for target plotTrajectory
 plotTrajectory_OBJECTS = \
-"CMakeFiles/plotTrajectory.dir/main.cpp.o"
+"CMakeFiles/plotTrajectory.dir/main.o"
 
 # External object files for target plotTrajectory
 plotTrajectory_EXTERNAL_OBJECTS =
 
-plotTrajectory: CMakeFiles/plotTrajectory.dir/main.cpp.o
+plotTrajectory: CMakeFiles/plotTrajectory.dir/main.o
 plotTrajectory: CMakeFiles/plotTrajectory.dir/build.make
+plotTrajectory: /usr/local/lib/libpango_glgeometry.so
+plotTrajectory: /usr/local/lib/libpango_plot.so
+plotTrajectory: /usr/local/lib/libpango_python.so
+plotTrajectory: /usr/local/lib/libpango_scene.so
+plotTrajectory: /usr/local/lib/libpango_tools.so
+plotTrajectory: /usr/local/lib/libpango_video.so
+plotTrajectory: /usr/local/lib/libpango_geometry.so
+plotTrajectory: /usr/local/lib/libtinyobj.so
+plotTrajectory: /usr/local/lib/libpango_display.so
+plotTrajectory: /usr/local/lib/libpango_vars.so
+plotTrajectory: /usr/local/lib/libpango_windowing.so
+plotTrajectory: /usr/local/lib/libpango_opengl.so
+plotTrajectory: /usr/lib/x86_64-linux-gnu/libGLEW.so
+plotTrajectory: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+plotTrajectory: /usr/lib/x86_64-linux-gnu/libGLX.so
+plotTrajectory: /usr/lib/x86_64-linux-gnu/libGLU.so
+plotTrajectory: /usr/local/lib/libpango_image.so
+plotTrajectory: /usr/local/lib/libpango_packetstream.so
+plotTrajectory: /usr/local/lib/libpango_core.so
 plotTrajectory: CMakeFiles/plotTrajectory.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable plotTrajectory"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable plotTrajectory"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/plotTrajectory.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -105,6 +124,6 @@ CMakeFiles/plotTrajectory.dir/clean:
 .PHONY : CMakeFiles/plotTrajectory.dir/clean
 
 CMakeFiles/plotTrajectory.dir/depend:
-	cd /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mao/myslam14/ch3/plotTrajectory /home/mao/myslam14/ch3/plotTrajectory /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug /home/mao/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles/plotTrajectory.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mao/slam/myslam14/ch3/plotTrajectory /home/mao/slam/myslam14/ch3/plotTrajectory /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug /home/mao/slam/myslam14/ch3/plotTrajectory/cmake-build-debug/CMakeFiles/plotTrajectory.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/plotTrajectory.dir/depend
 

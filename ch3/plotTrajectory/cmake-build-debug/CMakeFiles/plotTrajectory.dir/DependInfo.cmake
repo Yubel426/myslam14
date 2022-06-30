@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/mao/myslam14/ch3/plotTrajectory/main.cpp" "CMakeFiles/plotTrajectory.dir/main.cpp.o" "gcc" "CMakeFiles/plotTrajectory.dir/main.cpp.o.d"
+  "/home/mao/slam/myslam14/ch3/plotTrajectory/main.cpp" "CMakeFiles/plotTrajectory.dir/main.o" "gcc" "CMakeFiles/plotTrajectory.dir/main.o.d"
   )
 
 # Targets to which this target links.
