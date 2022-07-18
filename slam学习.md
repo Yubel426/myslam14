@@ -65,14 +65,17 @@ main.cpp
 
 #### 3.1.1点，向量，坐标系
 
-* 内积
-* 外积 反对称符号
+##### 内积
+
+$a \cdot b=a^Tb=\sum_{i=1}^3a_ib_i$
+
+##### 外积
 
 #### 3.1.2欧氏变换
 
 * 旋转矩阵
 
-​		SO(n)特殊正交群，R~12~表示坐标系2变换到坐标系1的旋转矩阵。
+​		$SO(n)$特殊正交群，R~12~表示坐标系2变换到坐标系1的旋转矩阵。
 
 * 平移矩阵
 
@@ -257,7 +260,35 @@ void DrawTrajectory(vector<Isometry3d, Eigen::aligned_allocator<Isometry3d>> pos
 }
 ```
 
+## ch4李群李代数
 
+### 群
+
+群是一种集合加上一种运算的代数结构，包括封闭性，结合律，幺元和逆。
+
+### 李群
+
+具有连续性质的群。一个刚体能够连续的空间运动，$SO(3),SE(3)$都是李群。
+
+### 李代数
+
+与李群对应的一种结构，位于向量空间。事实上是李群单位元处的正切空间。记为$so(3),se(3)$。
+
+考虑旋转矩阵$R$，$R(t)R(t)^T=I$，两侧求导
+
+$\Rightarrow \dot R(t)R(t)^T+R(t)\dot R(t)^T=0 $
+
+$\Rightarrow \dot R(t)R(t)^T=-(\dot R(t) R(t)^T)^T$
+
+$\dot R(t)R(t)^T$为一个反对称矩阵。记
+
+$\dot R(t)R(t)^T=\phi(t)^{\wedge}$
+
+$\Rightarrow \dot R(t)=\phi(t)^{\wedge}R(t)$
+
+考虑单位元附近，有$t_0=0,R(0)=I$
+
+$R(t)\approx R(t_0)+\dot R(t_0)(t-t_0)=I+\phi(t_0)^{\wedge}(t)$
 
 
 
