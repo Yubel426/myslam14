@@ -290,6 +290,47 @@ $\Rightarrow \dot R(t)=\phi(t)^{\wedge}R(t)$
 
 $R(t)\approx R(t_0)+\dot R(t_0)(t-t_0)=I+\phi(t_0)^{\wedge}(t)$
 
+### 实践
+
+```c++
+//SO3
+Matrix3d R;
+Quaterniond q(R);
+Sophus::SO3d SO3_R(R);  // Sophus::SO3d可以直接从旋转矩阵构造
+Sophus::SO3d SO3_q(q);  // 也可以通过四元数构造
+// 使用对数映射获得它的李代数
+Vector3d so3 = SO3_R.log();
+
+// hat 为向量到反对称矩阵
+cout << "so3 hat=\n" << Sophus::SO3d::hat(so3) << endl;
+// 相对的，vee为反对称到向量
+cout << "so3 hat vee= " << Sophus::SO3d::vee(Sophus::SO3d::hat(so3)).transpose() << endl;
+
+// 增量扰动模型的更新
+Vector3d update_so3; //假设更新量为这么多
+Sophus::SO3d SO3_updated = Sophus::SO3d::exp(update_so3) * SO3_R;
+
+//SE3
+Vector3d t;
+Sophus::SE3d SE3_Rt(R, t);           // 从R,t构造SE(3)
+Sophus::SE3d SE3_qt(q, t);            // 从q,t构造SE(3)
+```
+
+```c++
+//计算rmse
+double rmse = 0;
+for (size_t i = 0; i < estimated.size(); i++) {
+  Sophus::SE3d p1 = estimated[i], p2 = groundtruth[i];
+  double error = (p2.inverse() * p1).log().norm();
+  rmse += error * error;
+}
+rmse = rmse / double(estimated.size());
+rmse = sqrt(rmse);
+cout << "RMSE = " << rmse << endl;
+```
+
+
+
 
 
 
