@@ -329,7 +329,20 @@ rmse = sqrt(rmse);
 cout << "RMSE = " << rmse << endl;
 ```
 
+## ch5相机
 
+
+
+### opencv
+
+```bash
+sudo apt-get install 依赖库
+mkdir build
+cd build 
+cmake ..
+sudo make -j4
+sudo make install
+```
 
 
 
